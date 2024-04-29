@@ -35,4 +35,15 @@ class Melon:
 class Squash(Melon):
     """Winter squash."""
 
-    # FIX ME: Add Squash class definition here.
+    def __init__(self, weight, color, stickers, squash_type):
+        super().__init__(weight,color,stickers)
+        self.squash_type = squash_type
+    
+    def prep(self):
+        """Prepare the sqaush"""
+        robots.cleanerbot.clean(self)
+        robots.stickerbot.apply_logo(self)
+        robots.painterbot.paint(self)
+    
+
+
